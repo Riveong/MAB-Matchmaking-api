@@ -13,6 +13,9 @@ app = FastAPI()
 
 origins = ["*"]
 
+PORT = 8000
+HOST = '0.0.0.0'
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -159,4 +162,4 @@ async def get_all_data():
     return data
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, host = HOST, port = PORT, reload = True)
